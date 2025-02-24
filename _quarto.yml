@@ -4,7 +4,7 @@ project:
 
 book:
   title: "COMP/STAT112 Notebook"
-  author: "Your Name Here"
+  author: "Ataa"
   date: today
   reader-mode: true
   page-navigation: true
@@ -13,7 +13,7 @@ book:
   
   
   sidebar:
-    title: "Your Name Here"
+    title: "Ataa"
     collapse-level: 2
     style: "docked"
     pinned: true
@@ -22,6 +22,15 @@ book:
   
   chapters:
     - index.qmd
+    - ica/Uviz.qmd
+    - ica/Bviz.qmd
+    - ica/Multiviz.qmd
+    - ica/ica-spatial.qmd
+    - bw-uni.qmd
+    - bw-bi.qmd
+    - bw-tri.qmd
+    - bw-quad.qmd
+    - bw-spatial.qmd
 
     - part: "Best Work"
       chapters: 

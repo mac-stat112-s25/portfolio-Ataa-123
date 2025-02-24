@@ -289,7 +289,7 @@ ggplot(hikes, aes(x = rating)) +
 ggplot(hikes, aes(x = rating)) +
   geom_bar(color = "orange", fill = "blue") +
   labs(x = "Rating", y = "Number of hikes")
-# Now the outline of the bars is orange due to geom_bar(color = "orange", fille = "blue")
+# Now the outline of the bars is orange due to geom_bar(color = "orange", fill = "blue")
 ```
 
 ```{r eval = FALSE}

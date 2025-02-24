@@ -3,3 +3,18 @@ title: "Bivariate Viz"
 ---
 
 Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.
+
+Presidential election data on how people vote/voted in different years and the results
+```{r}
+library(tidyverse)
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+```
+
+Density plot illustrating the percentage of historically blue, purple, and red people who voted republican in 2020. 
+#make sure to check on this to make sure this is accurate
+```{r}
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density() +
+  scale_fill_manual(values = c("blue", "purple", "red")) +
+  facet_wrap(~ historical)
+```
