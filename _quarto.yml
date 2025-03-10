@@ -25,12 +25,12 @@ book:
     
     
     
-    - ica/ica-spatial.qmd
-    - bw-uni.qmd
-    - bw-bi.qmd
-    - bw-tri.qmd
-    - bw-quad.qmd
-    - bw-spatial.qmd
+    # - ica/ica-spatial.qmd
+    # - bw-uni.qmd
+    # - bw-bi.qmd
+    # - bw-tri.qmd
+    # - bw-quad.qmd
+    # - bw-spatial.qmd
 
     - part: "Best Work"
       chapters: 
@@ -39,6 +39,7 @@ book:
       - bw/bw-tri.qmd
       - bw/bw-quad.qmd
       - bw/bw-spatial.qmd
+      - bw/bw-exam1.qmd
 
     - part: "In-class Activities"
       chapters: 
