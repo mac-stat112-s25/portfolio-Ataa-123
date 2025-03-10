@@ -22,9 +22,9 @@ book:
   
   chapters:
     - index.qmd
-    - ica/Uviz.qmd
-    - ica/Bviz.qmd
-    - ica/Multiviz.qmd
+    
+    
+    
     - ica/ica-spatial.qmd
     - bw-uni.qmd
     - bw-bi.qmd
@@ -42,10 +42,17 @@ book:
 
     - part: "In-class Activities"
       chapters: 
+      - ica/Uviz.qmd
+      - ica/Bviz.qmd
       - ica/ica-uni.qmd
       - ica/ica-bi.qmd
       - ica/ica-multi.qmd
+      - ica/Multiviz.qmd
       - ica/ica-spatial.qmd
+      - ica/ica-wrangling.qmd
+      - ica/ica-dates.qmd
+      - ica/ica-reshaping.qmd
+      - ica/ica-joining.qmd
 
 format:
   html:

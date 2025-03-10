@@ -1,0 +1,31 @@
+---
+title: "bw-exam1"
+format: html
+---
+
+```{r}
+install.packages("tidytuesdayR")
+```
+
+```{r}
+library(tidyverse)
+library(tidytuesdayR)
+```
+
+```{r}
+tuesdata <- tt_load('2020-02-18')
+fc <- tuesdata$food_consumption
+```
+
+```{r}
+ggplot(fc, aes(x = food_category, y = consumption)) +
+  geom_boxplot() +
+  facet_wrap(~country)
+```
+```{r}
+ggplot(fc, aes(x = consumption, color = food_category)) +
+  geom_histogram() +
+  facet_wrap(~country)
+```
+
+Any way of doing this is going to be hard to see, even when you open the full page, due to the large number of countries. Is there a way to change the scalling or is this just an issue regardless
