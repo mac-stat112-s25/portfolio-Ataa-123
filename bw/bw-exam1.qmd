@@ -4,10 +4,6 @@ format: html
 ---
 
 ```{r}
-install.packages("tidytuesdayR")
-```
-
-```{r}
 library(tidyverse)
 library(tidytuesdayR)
 ```
@@ -22,7 +18,7 @@ ggplot(fc, aes(x = food_category, y = consumption)) +
   geom_boxplot() +
   facet_wrap(~country)
 ```
-```{r}
+```{r fig.height=7, fig.width=10}
 ggplot(fc, aes(x = consumption, color = food_category)) +
   geom_histogram() +
   facet_wrap(~country)

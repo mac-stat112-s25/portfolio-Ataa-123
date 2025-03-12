@@ -1,9 +1,4 @@
 ---
-title: "ica-joining"
-format: html
----
-
----
 title: "Joining"
 number-sections: true
 execute: 
@@ -261,7 +256,6 @@ Filtering joins keep specific observations from the left table based on whether 
 
 ## Exercises
 
-{{< include activity-instructions.qmd >}}
 
 ### Exercise 1: Where are my keys? {.unnumbered}
 
