@@ -1,0 +1,101 @@
+---
+title: "imdb_5000_messy_README"
+format: html
+---
+
+Here include citations:
+
+
+```{r}
+library(tidyverse)
+imdb_messy <- read_csv("~/Documents/GitHub/portfolio-Ataa-123/data/imdb_5000_messy.csv")
+```
+
+```{r}
+# This should be the folder where you stored this qmd!
+getwd()
+```
+
+```{r}
+imdb_temp <- read_csv("../data/imdb_5000_messy.csv")
+```
+
+```{r}
+imdb_messy |>
+  mutate(across(where(is.character), as.factor)) |>  # convert characters to factors in order to summarize
+  summary()
+```
+For quantitative datat it shows the minimum, median, mean and maximums as well as the quartiles. For categorical data it shows the common names and then there count of how many times it showed up in the data set. Maybe to clean you get rid of the N/As depending on what you want to do but I don't think there's anything that needs to be changed. Maybe doing only a portion of the data set for the sake of simplicity or time may be an option.
+
+```{r}
+imdb_messy |>
+  count(color)
+```
+
+```{r}
+imdb_temp <- imdb_messy |>
+  mutate(color = fct_recode(color, "Color" = "COLOR",
+                            "Color" = "color",
+                            "Black_White" = "B&W",
+                            "Black_White" = "Black and White")) 
+imdb_temp |>
+  count(color)
+```
+
+```{r}
+imdb_temp <- imdb_messy |> 
+  mutate(color = str_replace(color, "COLOR", "Color"),
+         color = str_replace(color, "color", "Color"),
+         color = str_replace(color, "B&W", "Black_White"),
+         color = str_replace(color, "Black and White", "Black_White"))
+
+imdb_temp |> 
+  count(color)
+```
+
+```{r}
+# Count the total number of rows in imdb_messy
+nrow(imdb_messy)
+
+# Then count the number of NAs in each column
+colSums(is.na(imdb_messy))
+
+# Then count the number of NAs in a specific column
+#imdb_messy |> 
+#  ___(___(is.na(actor_1_facebook_likes)))
+```
+
+```{r}
+imdb_messy |>
+  filter(is.na(actor_1_facebook_likes))
+```
+
+```{r}
+imdb_messy |>
+  summarize(avg_duration = mean(duration, na.rm = TRUE))
+```
+
+```{r}
+imdb_temp <- drop_na(imdb_messy)
+```
+
+```{r}
+ggplot(imdb_messy, aes(x = duration, fill = color)) +
+  geom_density()
+```
+
+```{r}
+imdb_messy |>
+  filter(!is.na(duration), !is.na(color)) |>
+  ggplot(aes(x = duration, fill = color)) +
+  geom_density()
+```
+
+```{r}
+imdb_temp <- imdb_messy |> 
+  mutate(actor_1_facebook_likes =
+         replace_na(actor_1_facebook_likes, 0))
+
+imdb_temp |> 
+  summarize(sum(is.na(actor_1_facebook_likes)))
+```

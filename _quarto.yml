@@ -54,6 +54,7 @@ book:
       - ica/ica-dates.qmd
       - ica/ica-reshaping.qmd
       - ica/ica-joining.qmd
+      - data/imdb_5000_README.qmd
 
 format:
   html:
