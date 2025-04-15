@@ -3,3 +3,28 @@ title: "Quadvariate Viz"
 ---
 
 Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+library(tidyverse)
+library(mosaic)
+library(fivethirtyeight)
+library(ggplot2)
+```
+Data on number of births a month, year, day and what day, month year.
+```{r}
+data("Birthdays")
+daily_births <- Birthdays %>% 
+  group_by(date) %>%
+  summarize(births = sum(births)) %>%
+  mutate(year = year(date), 
+         month = month(date, label = TRUE),
+         day_of_month = mday(date),
+         day_of_week = wday(date, label = TRUE))
+```
+
+This visualization uses faceted colored box-plots to illustrate the number of births per year and how those differed in each month on each day of the week. 
+```{r}
+ggplot(daily_births, aes(x=year, y=births, fill=month)) +
+  geom_boxplot() +
+  facet_wrap(~day_of_week)
+```
