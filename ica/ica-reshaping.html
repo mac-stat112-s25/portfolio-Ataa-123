@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>4&nbsp; Quadvariate Viz – COMP/STAT112 Notebook</title>
+<title>18&nbsp; ica-reshaping – COMP/STAT112 Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,8 +59,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../bw/bw-spatial.html" rel="next">
-<link href="../bw/bw-tri.html" rel="prev">
+<link href="../ica/ica-joining.html" rel="next">
+<link href="../ica/ica-dates.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../bw/bw-uni.html">Best Work</a></li><li class="breadcrumb-item"><a href="../bw/bw-quad.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Viz</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/Uviz.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-reshaping.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">ica-reshaping</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -170,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../bw/bw-quad.html" class="sidebar-item-text sidebar-link active">
+  <a href="../bw/bw-quad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Viz</span></span></a>
   </div>
 </li>
@@ -265,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ica/ica-reshaping.html" class="sidebar-item-text sidebar-link">
+  <a href="../ica/ica-reshaping.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">ica-reshaping</span></span></a>
   </div>
 </li>
@@ -291,9 +291,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../bw/bw-uni.html">Best Work</a></li><li class="breadcrumb-item"><a href="../bw/bw-quad.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Viz</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/Uviz.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-reshaping.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">ica-reshaping</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Viz</span>
+<span class="chapter-number">18</span>&nbsp; <span class="chapter-title">ica-reshaping</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -308,8 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Use this file to generate a professional looking <strong>quadvariate</strong> visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</p>
-<div class="cell">
+</header><div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
@@ -323,73 +322,251 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(mosaic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 method overwritten by 'mosaic':
-  method                           from   
-  fortify.SpatialPolygonsDataFrame ggplot2
+<pre><code>Rows: 344 Columns: 8
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): species, island, sex
+dbl (5): bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, year
 
-The 'mosaic' package masks several functions from core packages in order to add 
-additional features.  The original behavior of these functions should not be affected by this.
-
-Attaching package: 'mosaic'
-
-The following object is masked from 'package:Matrix':
-
-    mean
-
-The following objects are masked from 'package:dplyr':
-
-    count, do, tally
-
-The following object is masked from 'package:purrr':
-
-    cross
-
-The following object is masked from 'package:ggplot2':
-
-    stat
-
-The following objects are masked from 'package:stats':
-
-    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,
-    quantile, sd, t.test, var
-
-The following objects are masked from 'package:base':
-
-    max, mean, min, prod, range, sample, sum</code></pre>
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(fivethirtyeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>penguin_avg <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">summarize</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">na.omit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Some larger datasets need to be installed separately, like senators and
-house_district_forecast. To install these, we recommend you install the
-fivethirtyeightdata package by running:
-install.packages('fivethirtyeightdata', repos =
-'https://fivethirtyeightdata.github.io/drat/', type = 'source')</code></pre>
+<pre><code>`summarise()` has grouped output by 'species'. You can override using the
+`.groups` argument.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Data on number of births a month, year, day and what day, month year.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">data</span>(<span class="st">"Birthdays"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a>daily_births <span class="ot">&lt;-</span> Birthdays <span class="sc">%&gt;%</span> </span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">summarize</span>(<span class="at">births =</span> <span class="fu">sum</span>(births)) <span class="sc">%&gt;%</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date), </span>
-<span id="cb8-6"><a href="#cb8-6"></a>         <span class="at">month =</span> <span class="fu">month</span>(date, <span class="at">label =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb8-7"><a href="#cb8-7"></a>         <span class="at">day_of_month =</span> <span class="fu">mday</span>(date),</span>
-<span id="cb8-8"><a href="#cb8-8"></a>         <span class="at">day_of_week =</span> <span class="fu">wday</span>(date, <span class="at">label =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Units of observation = ???</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           NA            NA                  NA          NA
+5 Adelie  Torgersen           36.7          19.3               193        3450
+6 Adelie  Torgersen           39.3          20.6               190        3650
+# ℹ 2 more variables: sex &lt;chr&gt;, year &lt;dbl&gt;</code></pre>
 </div>
-<p>This visualization uses faceted colored box-plots to illustrate the number of births per year and how those differed in each month on each day of the week.</p>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(daily_births, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>births, <span class="at">fill=</span>month)) <span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>day_of_week)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="bw-quad_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Units of observation = ???</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">head</span>(penguin_avg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+# Groups:   species [3]
+  species   sex    avg_body_mass
+  &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
+1 Adelie    female         3369.
+2 Adelie    male           4043.
+3 Chinstrap female         3527.
+4 Chinstrap male           3939.
+5 Gentoo    female         4680.
+6 Gentoo    male           5485.</code></pre>
 </div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>penguin_avg <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+# Groups:   species [3]
+  species   female  male
+  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+1 Adelie     3369. 4043.
+2 Chinstrap  3527. 3939.
+3 Gentoo     4680. 5485.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>penguin_avg_wide <span class="ot">&lt;-</span> penguin_avg <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a>penguin_avg_wide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+# Groups:   species [3]
+  species   female  male
+  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+1 Adelie     3369. 4043.
+2 Chinstrap  3527. 3939.
+3 Gentoo     4680. 5485.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># We can either communicate which variables we WANT to collect into a single column (female, male)</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>penguin_avg_wide <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(female, male), <span class="at">names_to =</span> <span class="st">"sex"</span>, <span class="at">values_to =</span> <span class="st">"avg_body_mass"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+# Groups:   species [3]
+  species   sex    avg_body_mass
+  &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
+1 Adelie    female         3369.
+2 Adelie    male           4043.
+3 Chinstrap female         3527.
+4 Chinstrap male           3939.
+5 Gentoo    female         4680.
+6 Gentoo    male           5485.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Or which variable(s) we do NOT want to collect into a single column (sex)</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>penguin_avg_wide <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>species, <span class="at">names_to =</span> <span class="st">"sex"</span>, <span class="at">values_to =</span> <span class="st">"avg_body_mass"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+# Groups:   species [3]
+  species   sex    avg_body_mass
+  &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
+1 Adelie    female         3369.
+2 Adelie    male           4043.
+3 Chinstrap female         3527.
+4 Chinstrap male           3939.
+5 Gentoo    female         4680.
+6 Gentoo    male           5485.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">customer =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each =</span> <span class="dv">3</span>),</span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">restaurant =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Shish"</span>, <span class="st">"FrenchMeadow"</span>, <span class="st">"DunnBros"</span>), <span class="dv">2</span>),</span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"falafel"</span>, <span class="st">"salad"</span>, <span class="st">"coffee"</span>, <span class="st">"baklava"</span>, <span class="st">"pastry"</span>, <span class="st">"tea"</span>)</span>
+<span id="cb19-5"><a href="#cb19-5"></a>)</span>
+<span id="cb19-6"><a href="#cb19-6"></a>food</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  customer   restaurant   order
+1        A        Shish falafel
+2        A FrenchMeadow   salad
+3        A     DunnBros  coffee
+4        B        Shish baklava
+5        B FrenchMeadow  pastry
+6        B     DunnBros     tea</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>food <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> restaurant, <span class="at">values_from =</span> order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  customer Shish   FrenchMeadow DunnBros
+  &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;   
+1 A        falafel salad        coffee  
+2 B        baklava pastry       tea     </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>more_food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="at">customer =</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>),</span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="at">Shish =</span> <span class="fu">c</span>(<span class="st">"coffee"</span>, <span class="st">"maza"</span>),</span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="at">FrenchMeadow =</span> <span class="fu">c</span>(<span class="st">"soup"</span>, <span class="st">"sandwich"</span>),</span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="at">DunnBros =</span> <span class="fu">c</span>(<span class="st">"cookie"</span>, <span class="st">"coffee"</span>)</span>
+<span id="cb23-6"><a href="#cb23-6"></a>)</span>
+<span id="cb23-7"><a href="#cb23-7"></a>more_food</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  customer  Shish FrenchMeadow DunnBros
+1        C coffee         soup   cookie
+2        D   maza     sandwich   coffee</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>more_food <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Shish, FrenchMeadow, DunnBros), <span class="at">names_to =</span> <span class="st">"restaurant"</span>, <span class="at">values_to =</span> <span class="st">"order"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  customer restaurant   order   
+  &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;   
+1 C        Shish        coffee  
+2 C        FrenchMeadow soup    
+3 C        DunnBros     cookie  
+4 D        Shish        maza    
+5 D        FrenchMeadow sandwich
+6 D        DunnBros     coffee  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>sleep_wide <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/sleep_wide.csv"</span>)</span>
+<span id="cb27-2"><a href="#cb27-2"></a></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="fu">head</span>(sleep_wide) <span class="co">#What are the units of observation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Subject  day_0  day_1  day_2  day_3  day_4  day_5  day_6  day_7  day_8  day_9
+1     308 249.56 258.70 250.80 321.44 356.85 414.69 382.20 290.15 430.59 466.35
+2     309 222.73 205.27 202.98 204.71 207.72 215.96 213.63 217.73 224.30 237.31
+3     310 199.05 194.33 234.32 232.84 229.31 220.46 235.42 255.75 261.01 247.52
+4     330 321.54 300.40 283.86 285.13 285.80 297.59 280.24 318.26 305.35 354.05
+5     331 287.61 285.00 301.82 320.12 316.28 293.32 290.08 334.82 293.75 371.58
+6     332 234.86 242.81 272.96 309.77 317.46 310.00 454.16 346.83 330.30 253.86</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>sleep_wide <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">11</span>, <span class="at">names_to =</span> <span class="st">"day_restriction"</span>, <span class="at">values_to =</span> <span class="st">"reaction_time"</span>, <span class="at">names_prefix =</span> <span class="st">"day_"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 180 × 3
+   Subject day_restriction reaction_time
+     &lt;int&gt; &lt;chr&gt;                   &lt;dbl&gt;
+ 1     308 0                        250.
+ 2     308 1                        259.
+ 3     308 2                        251.
+ 4     308 3                        321.
+ 5     308 4                        357.
+ 6     308 5                        415.
+ 7     308 6                        382.
+ 8     308 7                        290.
+ 9     308 8                        431.
+10     308 9                        466.
+# ℹ 170 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>sleep_long <span class="ot">&lt;-</span> sleep_wide <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Subject, <span class="co">#Every subject except one that is getting "-"</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>               <span class="at">names_to =</span> <span class="st">"day"</span>,</span>
+<span id="cb31-4"><a href="#cb31-4"></a>               <span class="at">names_prefix =</span> <span class="st">"day_"</span>,</span>
+<span id="cb31-5"><a href="#cb31-5"></a>               <span class="at">values_to =</span> <span class="st">"reaction_time"</span>)</span>
+<span id="cb31-6"><a href="#cb31-6"></a></span>
+<span id="cb31-7"><a href="#cb31-7"></a><span class="fu">head</span>(sleep_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  Subject day   reaction_time
+    &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt;
+1     308 0              250.
+2     308 1              259.
+3     308 2              251.
+4     308 3              321.
+5     308 4              357.
+6     308 5              415.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Make a line plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>sleep_long <span class="ot">&lt;-</span> sleep_wide <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Subject,</span>
+<span id="cb34-3"><a href="#cb34-3"></a>               <span class="at">names_to =</span> <span class="st">"day"</span>,</span>
+<span id="cb34-4"><a href="#cb34-4"></a>               <span class="at">names_prefix =</span> <span class="st">"day_"</span>,</span>
+<span id="cb34-5"><a href="#cb34-5"></a>               <span class="at">values_to =</span> <span class="st">"reaction_time"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">mutate</span>(<span class="at">Subject =</span> <span class="fu">as.factor</span>(Subject), <span class="at">day =</span> <span class="fu">as.numeric</span>(day))</span>
+<span id="cb34-7"><a href="#cb34-7"></a></span>
+<span id="cb34-8"><a href="#cb34-8"></a><span class="co"># Check it out</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a><span class="co"># Same data, different class</span></span>
+<span id="cb34-10"><a href="#cb34-10"></a><span class="fu">head</span>(sleep_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  Subject   day reaction_time
+  &lt;fct&gt;   &lt;dbl&gt;         &lt;dbl&gt;
+1 308         0          250.
+2 308         1          259.
+3 308         2          251.
+4 308         3          321.
+5 308         4          357.
+6 308         5          415.</code></pre>
 </div>
 </div>
 
@@ -1017,46 +1194,112 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../bw/bw-tri.html" class="pagination-link" aria-label="Trivariate Viz">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Trivariate Viz</span></span>
+      <a href="../ica/ica-dates.html" class="pagination-link" aria-label="ica-dates">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">ica-dates</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../bw/bw-spatial.html" class="pagination-link" aria-label="Spatial Viz">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../ica/ica-joining.html" class="pagination-link" aria-label="Joining">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Joining</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb10" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">---</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="an">title:</span><span class="co"> "Quadvariate Viz"</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="co">---</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a></span>
-<span id="cb10-5"><a href="#cb10-5"></a>Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</span>
-<span id="cb10-6"><a href="#cb10-6"></a></span>
-<span id="cb10-9"><a href="#cb10-9"></a><span class="in">```{r}</span></span>
-<span id="cb10-10"><a href="#cb10-10"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb10-11"><a href="#cb10-11"></a><span class="fu">library</span>(mosaic)</span>
-<span id="cb10-12"><a href="#cb10-12"></a><span class="fu">library</span>(fivethirtyeight)</span>
-<span id="cb10-13"><a href="#cb10-13"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb10-14"><a href="#cb10-14"></a><span class="in">```</span></span>
-<span id="cb10-15"><a href="#cb10-15"></a>Data on number of births a month, year, day and what day, month year.</span>
-<span id="cb10-18"><a href="#cb10-18"></a><span class="in">```{r}</span></span>
-<span id="cb10-19"><a href="#cb10-19"></a><span class="fu">data</span>(<span class="st">"Birthdays"</span>)</span>
-<span id="cb10-20"><a href="#cb10-20"></a>daily_births <span class="ot">&lt;-</span> Birthdays <span class="sc">%&gt;%</span> </span>
-<span id="cb10-21"><a href="#cb10-21"></a>  <span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span></span>
-<span id="cb10-22"><a href="#cb10-22"></a>  <span class="fu">summarize</span>(<span class="at">births =</span> <span class="fu">sum</span>(births)) <span class="sc">%&gt;%</span></span>
-<span id="cb10-23"><a href="#cb10-23"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date), </span>
-<span id="cb10-24"><a href="#cb10-24"></a>         <span class="at">month =</span> <span class="fu">month</span>(date, <span class="at">label =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-25"><a href="#cb10-25"></a>         <span class="at">day_of_month =</span> <span class="fu">mday</span>(date),</span>
-<span id="cb10-26"><a href="#cb10-26"></a>         <span class="at">day_of_week =</span> <span class="fu">wday</span>(date, <span class="at">label =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb10-27"><a href="#cb10-27"></a><span class="in">```</span></span>
-<span id="cb10-28"><a href="#cb10-28"></a></span>
-<span id="cb10-29"><a href="#cb10-29"></a>This visualization uses faceted colored box-plots to illustrate the number of births per year and how those differed in each month on each day of the week. </span>
-<span id="cb10-32"><a href="#cb10-32"></a><span class="in">```{r}</span></span>
-<span id="cb10-33"><a href="#cb10-33"></a><span class="fu">ggplot</span>(daily_births, <span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>births, <span class="at">fill=</span>month)) <span class="sc">+</span></span>
-<span id="cb10-34"><a href="#cb10-34"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb10-35"><a href="#cb10-35"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>day_of_week)</span>
-<span id="cb10-36"><a href="#cb10-36"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb36" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1"></a><span class="co">---</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="an">title:</span><span class="co"> "ica-reshaping"</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="co">---</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a></span>
+<span id="cb36-8"><a href="#cb36-8"></a><span class="in">```{r}</span></span>
+<span id="cb36-9"><a href="#cb36-9"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb36-10"><a href="#cb36-10"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv'</span>)</span>
+<span id="cb36-11"><a href="#cb36-11"></a><span class="in">```</span></span>
+<span id="cb36-14"><a href="#cb36-14"></a><span class="in">```{r}</span></span>
+<span id="cb36-15"><a href="#cb36-15"></a>penguin_avg <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb36-16"><a href="#cb36-16"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb36-17"><a href="#cb36-17"></a>  <span class="fu">summarize</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb36-18"><a href="#cb36-18"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb36-19"><a href="#cb36-19"></a><span class="in">```</span></span>
+<span id="cb36-22"><a href="#cb36-22"></a><span class="in">```{r}</span></span>
+<span id="cb36-23"><a href="#cb36-23"></a><span class="co"># Units of observation = ???</span></span>
+<span id="cb36-24"><a href="#cb36-24"></a><span class="fu">head</span>(penguins)</span>
+<span id="cb36-25"><a href="#cb36-25"></a><span class="in">```</span></span>
+<span id="cb36-28"><a href="#cb36-28"></a><span class="in">```{r}</span></span>
+<span id="cb36-29"><a href="#cb36-29"></a><span class="co"># Units of observation = ???</span></span>
+<span id="cb36-30"><a href="#cb36-30"></a><span class="fu">head</span>(penguin_avg)</span>
+<span id="cb36-31"><a href="#cb36-31"></a><span class="in">```</span></span>
+<span id="cb36-34"><a href="#cb36-34"></a><span class="in">```{r}</span></span>
+<span id="cb36-35"><a href="#cb36-35"></a>penguin_avg <span class="sc">|&gt;</span> </span>
+<span id="cb36-36"><a href="#cb36-36"></a><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span>
+<span id="cb36-37"><a href="#cb36-37"></a><span class="in">```</span></span>
+<span id="cb36-40"><a href="#cb36-40"></a><span class="in">```{r}</span></span>
+<span id="cb36-41"><a href="#cb36-41"></a>penguin_avg_wide <span class="ot">&lt;-</span> penguin_avg <span class="sc">|&gt;</span> </span>
+<span id="cb36-42"><a href="#cb36-42"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span>
+<span id="cb36-43"><a href="#cb36-43"></a></span>
+<span id="cb36-44"><a href="#cb36-44"></a>penguin_avg_wide</span>
+<span id="cb36-45"><a href="#cb36-45"></a><span class="in">```</span></span>
+<span id="cb36-48"><a href="#cb36-48"></a><span class="in">```{r}</span></span>
+<span id="cb36-49"><a href="#cb36-49"></a><span class="co"># We can either communicate which variables we WANT to collect into a single column (female, male)</span></span>
+<span id="cb36-50"><a href="#cb36-50"></a>penguin_avg_wide <span class="sc">|&gt;</span> </span>
+<span id="cb36-51"><a href="#cb36-51"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(female, male), <span class="at">names_to =</span> <span class="st">"sex"</span>, <span class="at">values_to =</span> <span class="st">"avg_body_mass"</span>)</span>
+<span id="cb36-52"><a href="#cb36-52"></a><span class="in">```</span></span>
+<span id="cb36-55"><a href="#cb36-55"></a><span class="in">```{r}</span></span>
+<span id="cb36-56"><a href="#cb36-56"></a><span class="co"># Or which variable(s) we do NOT want to collect into a single column (sex)</span></span>
+<span id="cb36-57"><a href="#cb36-57"></a>penguin_avg_wide <span class="sc">|&gt;</span> </span>
+<span id="cb36-58"><a href="#cb36-58"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>species, <span class="at">names_to =</span> <span class="st">"sex"</span>, <span class="at">values_to =</span> <span class="st">"avg_body_mass"</span>)</span>
+<span id="cb36-59"><a href="#cb36-59"></a><span class="in">```</span></span>
+<span id="cb36-62"><a href="#cb36-62"></a><span class="in">```{r}</span></span>
+<span id="cb36-63"><a href="#cb36-63"></a>food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb36-64"><a href="#cb36-64"></a>  <span class="at">customer =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each =</span> <span class="dv">3</span>),</span>
+<span id="cb36-65"><a href="#cb36-65"></a>  <span class="at">restaurant =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Shish"</span>, <span class="st">"FrenchMeadow"</span>, <span class="st">"DunnBros"</span>), <span class="dv">2</span>),</span>
+<span id="cb36-66"><a href="#cb36-66"></a>  <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"falafel"</span>, <span class="st">"salad"</span>, <span class="st">"coffee"</span>, <span class="st">"baklava"</span>, <span class="st">"pastry"</span>, <span class="st">"tea"</span>)</span>
+<span id="cb36-67"><a href="#cb36-67"></a>)</span>
+<span id="cb36-68"><a href="#cb36-68"></a>food</span>
+<span id="cb36-69"><a href="#cb36-69"></a>food <span class="sc">|&gt;</span></span>
+<span id="cb36-70"><a href="#cb36-70"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> restaurant, <span class="at">values_from =</span> order)</span>
+<span id="cb36-71"><a href="#cb36-71"></a><span class="in">```</span></span>
+<span id="cb36-74"><a href="#cb36-74"></a><span class="in">```{r}</span></span>
+<span id="cb36-75"><a href="#cb36-75"></a>more_food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb36-76"><a href="#cb36-76"></a>  <span class="at">customer =</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>),</span>
+<span id="cb36-77"><a href="#cb36-77"></a>  <span class="at">Shish =</span> <span class="fu">c</span>(<span class="st">"coffee"</span>, <span class="st">"maza"</span>),</span>
+<span id="cb36-78"><a href="#cb36-78"></a>  <span class="at">FrenchMeadow =</span> <span class="fu">c</span>(<span class="st">"soup"</span>, <span class="st">"sandwich"</span>),</span>
+<span id="cb36-79"><a href="#cb36-79"></a>  <span class="at">DunnBros =</span> <span class="fu">c</span>(<span class="st">"cookie"</span>, <span class="st">"coffee"</span>)</span>
+<span id="cb36-80"><a href="#cb36-80"></a>)</span>
+<span id="cb36-81"><a href="#cb36-81"></a>more_food</span>
+<span id="cb36-82"><a href="#cb36-82"></a></span>
+<span id="cb36-83"><a href="#cb36-83"></a>more_food <span class="sc">|&gt;</span></span>
+<span id="cb36-84"><a href="#cb36-84"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Shish, FrenchMeadow, DunnBros), <span class="at">names_to =</span> <span class="st">"restaurant"</span>, <span class="at">values_to =</span> <span class="st">"order"</span>)</span>
+<span id="cb36-85"><a href="#cb36-85"></a><span class="in">```</span></span>
+<span id="cb36-88"><a href="#cb36-88"></a><span class="in">```{r}</span></span>
+<span id="cb36-89"><a href="#cb36-89"></a>sleep_wide <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/sleep_wide.csv"</span>)</span>
+<span id="cb36-90"><a href="#cb36-90"></a></span>
+<span id="cb36-91"><a href="#cb36-91"></a><span class="fu">head</span>(sleep_wide) <span class="co">#What are the units of observation</span></span>
+<span id="cb36-92"><a href="#cb36-92"></a><span class="in">```</span></span>
+<span id="cb36-95"><a href="#cb36-95"></a><span class="in">```{r}</span></span>
+<span id="cb36-96"><a href="#cb36-96"></a>sleep_wide <span class="sc">|&gt;</span></span>
+<span id="cb36-97"><a href="#cb36-97"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">11</span>, <span class="at">names_to =</span> <span class="st">"day_restriction"</span>, <span class="at">values_to =</span> <span class="st">"reaction_time"</span>, <span class="at">names_prefix =</span> <span class="st">"day_"</span>)</span>
+<span id="cb36-98"><a href="#cb36-98"></a><span class="in">```</span></span>
+<span id="cb36-101"><a href="#cb36-101"></a><span class="in">```{r}</span></span>
+<span id="cb36-102"><a href="#cb36-102"></a>sleep_long <span class="ot">&lt;-</span> sleep_wide <span class="sc">|&gt;</span></span>
+<span id="cb36-103"><a href="#cb36-103"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Subject, <span class="co">#Every subject except one that is getting "-"</span></span>
+<span id="cb36-104"><a href="#cb36-104"></a>               <span class="at">names_to =</span> <span class="st">"day"</span>,</span>
+<span id="cb36-105"><a href="#cb36-105"></a>               <span class="at">names_prefix =</span> <span class="st">"day_"</span>,</span>
+<span id="cb36-106"><a href="#cb36-106"></a>               <span class="at">values_to =</span> <span class="st">"reaction_time"</span>)</span>
+<span id="cb36-107"><a href="#cb36-107"></a></span>
+<span id="cb36-108"><a href="#cb36-108"></a><span class="fu">head</span>(sleep_long)</span>
+<span id="cb36-109"><a href="#cb36-109"></a><span class="co"># Make a line plot</span></span>
+<span id="cb36-110"><a href="#cb36-110"></a><span class="in">```</span></span>
+<span id="cb36-113"><a href="#cb36-113"></a><span class="in">```{r}</span></span>
+<span id="cb36-114"><a href="#cb36-114"></a>sleep_long <span class="ot">&lt;-</span> sleep_wide <span class="sc">|&gt;</span></span>
+<span id="cb36-115"><a href="#cb36-115"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Subject,</span>
+<span id="cb36-116"><a href="#cb36-116"></a>               <span class="at">names_to =</span> <span class="st">"day"</span>,</span>
+<span id="cb36-117"><a href="#cb36-117"></a>               <span class="at">names_prefix =</span> <span class="st">"day_"</span>,</span>
+<span id="cb36-118"><a href="#cb36-118"></a>               <span class="at">values_to =</span> <span class="st">"reaction_time"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb36-119"><a href="#cb36-119"></a>  <span class="fu">mutate</span>(<span class="at">Subject =</span> <span class="fu">as.factor</span>(Subject), <span class="at">day =</span> <span class="fu">as.numeric</span>(day))</span>
+<span id="cb36-120"><a href="#cb36-120"></a></span>
+<span id="cb36-121"><a href="#cb36-121"></a><span class="co"># Check it out</span></span>
+<span id="cb36-122"><a href="#cb36-122"></a><span class="co"># Same data, different class</span></span>
+<span id="cb36-123"><a href="#cb36-123"></a><span class="fu">head</span>(sleep_long)</span>
+<span id="cb36-124"><a href="#cb36-124"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
