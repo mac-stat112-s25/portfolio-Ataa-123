@@ -60,13 +60,17 @@ elections_by_counties <- elections_by_counties |>
            ifelse(nchar(county_fips) == 4, paste0("0", county_fips), county_fips))
 ```
 
-Visualization on percentage of people in each county who voted republican.
+
 ```{r}
+#| fig-cap: "Visualization on percentage of people in each US county who voted republican."
+#| fig-alt: "Percentage of people in each county who voted republican. The more blue the less percent that voted republican and the more red the more percent voted repulican. This visualization illustrates that a lot of the miwest and smaller counties voted repulican while we see less repulican support in costal counties and large counties"
+
 ggplot(elections_by_counties, aes(map_id = county_fips, fill = repub_20_categories)) +
   geom_map(map = county_map) +
   scale_fill_manual(values = rev(brewer.pal(10, "RdBu")), name = "% Republican") +
   expand_limits(x = county_map$long, y = county_map$lat) +
   theme_map() +
   theme(legend.position = "right") + 
-  coord_equal()
+  coord_equal() +
+  labs(title = "Percentage of People in Each County Who Voted Republican.")
 ```

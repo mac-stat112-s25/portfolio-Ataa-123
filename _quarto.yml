@@ -43,6 +43,11 @@ book:
       - bw/bw-exam2.qmd
       - bw/solo-project.qmd
 
+    - part: "Exam Summaries"
+      chapters: 
+      - bw/bw-exam1.qmd
+      - bw/bw-exam2.qmd
+    
     - part: "In-class Activities"
       chapters: 
       - ica/Uviz.qmd
@@ -56,7 +61,7 @@ book:
       - ica/ica-dates.qmd
       - ica/ica-reshaping.qmd
       - ica/ica-joining.qmd
-      - data/imdb_5000_README.qmd
+      - data/imdb_5000_messy_README.qmd
 
 format:
   html:
@@ -71,10 +76,14 @@ format:
     code-link: true
     code-line-numbers: true
     code-tools: true
+    code-fold: true
 
 execute:
   cache: false
   freeze: auto
+  echo: true
+  warning: false
+  error: false
 
 editor: 
   markdown:

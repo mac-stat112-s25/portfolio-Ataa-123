@@ -14,12 +14,14 @@ Data on survey people taking this class took on favorite things to eat from cafe
 survey <- read.csv("https://ajohns24.github.io/data/112/about_us_2024.csv")
 ```
 
-A graph visualizing people's favorite place to hangout
 ```{r}
+#| fig-cap: "This is a bar graph that visualizes people's favorite places to hangout (from survey data)." 
+#| fig-alt: "People's favorite hangout location. On the X-axis is favorite hangout location and on the y-axis is number of people. About 9 people like the beach most, 6 or 7 like a city most, about 3 like the forest most, and 8 like the mountains most."
+
 ggplot(survey, aes(x=hangout)) +
   geom_bar(color = "orange", fill = "blue") +
   theme_minimal() +
-  labs(x="Favorite Hangout Location", y="# Of People")
+  labs(x="Favorite Hangout Location", y="# Of People", title = "People's Favorite Hangout Location")
 ```
 
 

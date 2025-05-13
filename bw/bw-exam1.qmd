@@ -23,5 +23,3 @@ ggplot(fc, aes(x = consumption, color = food_category)) +
   geom_histogram() +
   facet_wrap(~country)
 ```
-
-Any way of doing this is going to be hard to see, even when you open the full page, due to the large number of countries. Is there a way to change the scalling or is this just an issue regardless

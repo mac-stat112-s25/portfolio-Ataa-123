@@ -22,9 +22,12 @@ daily_births <- Birthdays %>%
          day_of_week = wday(date, label = TRUE))
 ```
 
-This visualization uses faceted colored box-plots to illustrate the number of births per year and how those differed in each month on each day of the week. 
 ```{r}
+#| fig-cap: "This visualization uses faceted colored box-plots to illustrate the number of births per year and how those differed in each month on each day of the week."
+#| fig-alt: "Number of births a year by day and month. x-axis is year, y-axis is number of births, color is month and facet is day of the week. We see pretty similar trends between the days and a rise in births during the summer months."
+
 ggplot(daily_births, aes(x=year, y=births, fill=month)) +
   geom_boxplot() +
-  facet_wrap(~day_of_week)
+  facet_wrap(~day_of_week) +
+  labs(x = "Year", y = "Number of Births", title = "Number of Births a Year by Day & Month")
 ```

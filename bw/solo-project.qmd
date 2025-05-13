@@ -21,6 +21,7 @@ ne_states(country = "mexico") |>
   left_join(Mexico_covid_deaths, join_by(name == State)) |>
   ggplot() +
   geom_sf(aes(fill = Deaths)) +
-  labs(title = "2020 Covid deaths in Mexico by Federal Entity")
+  theme_void() +
+  labs(title = "2020 Covid Deaths in Mexico by Federal Entity") 
 ```
 This plot illustrates the number of covid deaths in 2020 in each federal entity in Mexico. We see that a large number of the states saw a lower amount of deaths "relatively" (below 5000) as they are colored dark blue, but we see one entity in particular in the middle which had a much higher number of deaths (around 10000) relative to the rest of the country.
