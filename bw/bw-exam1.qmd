@@ -1,0 +1,25 @@
+---
+title: "bw-exam1"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(tidytuesdayR)
+```
+
+```{r}
+tuesdata <- tt_load('2020-02-18')
+fc <- tuesdata$food_consumption
+```
+
+```{r}
+ggplot(fc, aes(x = food_category, y = consumption)) +
+  geom_boxplot() +
+  facet_wrap(~country)
+```
+```{r fig.height=7, fig.width=10}
+ggplot(fc, aes(x = consumption, color = food_category)) +
+  geom_histogram() +
+  facet_wrap(~country)
+```

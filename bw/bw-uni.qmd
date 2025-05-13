@@ -3,3 +3,28 @@ title: "Univariate Viz"
 ---
 
 Use this file to generate a professional looking **univariate** visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+```
+
+Data on survey people taking this class took on favorite things to eat from cafe mac, how far they are from campus, their favorite temperature and their favorite place to hangout. 28 observations
+```{r}
+survey <- read.csv("https://ajohns24.github.io/data/112/about_us_2024.csv")
+```
+
+```{r}
+#| fig-cap: "This is a bar graph that visualizes people's favorite places to hangout (from survey data)." 
+#| fig-alt: "People's favorite hangout location. On the X-axis is favorite hangout location and on the y-axis is number of people. About 9 people like the beach most, 6 or 7 like a city most, about 3 like the forest most, and 8 like the mountains most."
+
+ggplot(survey, aes(x=hangout)) +
+  geom_bar(color = "orange", fill = "blue") +
+  theme_minimal() +
+  labs(x="Favorite Hangout Location", y="# Of People", title = "People's Favorite Hangout Location")
+```
+
+
+
+
+

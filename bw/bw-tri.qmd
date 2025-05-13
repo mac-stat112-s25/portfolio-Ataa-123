@@ -3,3 +3,22 @@ title: "Trivariate Viz"
 ---
 
 Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+
+Data on different states their SAT scores, salary and money spent on SAT prep.
+```{r}
+library(tidyverse)
+education <- read.csv("https://mac-stat.github.io/data/sat.csv")
+```
+
+```{r}
+#| fig-cap: "Plot illustrating SAT scores based on expenditure (on tutoring and such), differentiated by fracCat (the fraction of that states student population that took the SAT)."
+#| fig-alt: "S A T scores based on expenditure and fracCat. on the x-axis is expenditure and on the y is sat score. with a fracCat from 0-15 we see a very subtle positive trend but nothing conclusive. From 15-45 fracCat we see a more positive trend. from 45-100 fracCat the trend is subtle and positive but more conclusive than 0-15."
+
+ggplot(education, aes(x=expend, y=sat, color = fracCat)) +
+  geom_point() +
+  geom_smooth(method = lm) +
+  labs(x = "Expenditure", y = "SAT Score", title = "SAT Scores Based on Expenditure & FracCat")
+```
+
+
